@@ -1,16 +1,17 @@
+/* –––––––––RESET––––––––– */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+/* –––––––––BASE STYLES––––––––– */
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   color: darkslategray;
 }
-
-
 
 .site-header { 
   background-color: white;
@@ -38,14 +39,8 @@ body {
   padding: 0 1rem;
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 1.5rem;
-}
 
-
-
+/* –––––––––HEADER STYLES––––––––– */
 .header-title {
   display: flex;
   flex-direction: column;
@@ -69,6 +64,16 @@ body {
   align-items: center;
 }
 
+
+/* –––––––––DASHBOARD STYLES––––––––– */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+}
+
+
+/* –––––––––BUTTON STYLES––––––––– */
 .btn-primary,
 .btn-secondary,
 .btn-text {
@@ -98,6 +103,8 @@ body {
   padding: 0.5rem;
 }
 
+
+/* –––––––––TASKS STYLES––––––––– */
 .tasks-section {
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -171,6 +178,7 @@ body {
 }
 
 
+/* –––––––––STATS STYLES––––––––– */
 .stats-section {
   padding: 1.5rem;
   border-radius: 5px;
@@ -209,6 +217,7 @@ body {
 }
 
 
+/* –––––––––MODAL STYLES––––––––– */
 .modal {
   border: none;
   border-radius: 5px;
@@ -281,6 +290,8 @@ body {
 
 
 
+/* –––––––––RESPONSIVE STYLES––––––––– */
+/* SMALLER MONITORS/LARGER TABLETS */
 @media screen and (max-width: 1024px) {
   .header-container,
   .footer-container,
@@ -297,6 +308,8 @@ body {
   }
 }
 
+
+/* SMALLER TABLETS */
 @media screen and (max-width: 768px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
@@ -320,6 +333,7 @@ body {
 }
 
 
+/* PHONES */
 @media screen and (max-width: 640px) {
   .header-container {
     flex-direction: column;
