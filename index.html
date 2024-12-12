@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test Site 12 - A random site made for no particular reason.">
+  <title>Test Site 12</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-title">
+        <h1>Test Site 12</h1>
+        <p>Just a random site.</p>
+      </div>
+      <nav class="main-nav">
+        <button id="addTask" class="btn-primary" aria-label="Create new task">
+          <span class="icon">+</span> New Task
+        </button>
+        <button id="addTask" class="btn-secondary" aria-label="Toggle dark mode">
+          <span class="icon">🌚</span> New Task
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="main-content">
+    <div class="dashboard-grid">
+      <!-- Tasks Section -->
+      <section class="tasks-section" aria-labelledby="tasks-heading">
+        <h2 id="tasks-heading" class="section-heading">Active Tasks</h2>
+        <div id="tasksContainer" class="tasks-container">
+          <!-- Tasks appear here -->
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section class="stats-section" aria-labelledby="stats-heading">
+        <h2 id="stats-heading" class="section-heading">Dashboard Stats</h2>
+        <div class="stats-grid">
+          <div class="stat-card" role="status" aria-live="polite">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks" class="stat-value">0</p>
+          </div>
+          <div class="stat-card" role="status" aria-live="polite">
+            <h3>Active Time</h3>
+            <p id="totalTime" class="stat-value">00:00:00</p>
+          </div>
+          <div class="stat-card" role="status" aria-live="polite">
+            <h3>Completed</h3>
+            <p id="completedTasks" class="stat-value">0</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>Test Site 12 – Test</p>
+      <nav class="footer-nav">
+        <ul class="footer-links">
+          <li>
+            <button id="clearDataBtn" class="btn-text">Clear Data</button>
+          </li>
+          <li>
+            <button id="exportDataBtn" class="btn-text">Export Tasks</button>
+          </li>
+          <li>
+            <button id="helpBtn" class="btn-text">Help</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
