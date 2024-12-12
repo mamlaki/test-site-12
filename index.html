@@ -72,5 +72,42 @@
       </nav>
     </div>
   </footer>
+  <dialog id="taskModal" class="modal" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Create new Task</h2>
+        <button class="close-modal" aria-label="Close modal">x</button>
+      </div>
+      <form id="taskForm" class="task-form">
+        <div class="form-group">
+          <label for="taskName">Task Name</label>
+          <input 
+            type="text"
+            id="taskName"
+            name="taskName"
+            required
+            max-length="50"
+            aria-required="true"
+          >
+        </div>
+        <div class="form-group">
+          <label for="taskCategory">Category</label>
+          <select name="taskCategory" id="taskCategory">
+            <option value="work">Work</option>
+            <option value="personal">Persona</option>
+            <option value="study">Study</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="taskDescription">Description</label>
+          <textarea name="taskDescription" id="taskDescription" rows="3" maxLength="200"></textarea>
+        </div>
+        <div class="form-footer">
+          <button type="submit" class="btn-primary">Create Task</button>
+          <button type="button" class="btn-secondary" id="cancelTaskBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 </body>
 </html>
