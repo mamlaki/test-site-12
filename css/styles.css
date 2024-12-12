@@ -28,6 +28,10 @@ body {
   align-items: center;
 }
 
+.footer-links {
+  list-style: none;
+}
+
 .main-content {
   max-width: 1200px;
   margin: 2rem auto;
@@ -273,4 +277,85 @@ body {
 .form-footer {
   display: flex;
   gap: 1rem;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .header-container,
+  .footer-container,
+  .main-content {
+    max-width: 900px;
+  }
+
+  .dashboard-grid {
+    gap: 1rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3 1fr);
+  }
+
+  .header-container {
+    padding: 0 1.5rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .task-card {
+    padding: 0.75rem;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .header-title h1 {
+    font-size: 1.25rem;
+  }
+
+  .header-title p {
+    font-size: 1rem;
+  }
+
+  .task-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .task-controls {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
 }
