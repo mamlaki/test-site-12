@@ -10,6 +10,8 @@ body {
   color: darkslategray;
 }
 
+
+
 .site-header { 
   background-color: white;
   border-bottom: 1px solid black;
@@ -35,8 +37,10 @@ body {
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: 1.5reml
+  gap: 1.5rem;
 }
+
+
 
 .header-title {
   display: flex;
@@ -44,6 +48,49 @@ body {
   gap: 0.5rem;
 }
 
-/* .header-title h1 {
-  font-size: 
-} */
+.header-title h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-title p {
+  color: black;
+  font-size: 1.25rem;
+}
+
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-text {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+  background-color: lightskyblue;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: navy;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.btn-text {
+  padding: 0.5rem;
+}
+
