@@ -165,3 +165,40 @@ body {
   margin-top: 0.5rem;
   font-size: 0.8rem;
 }
+
+.stats-section {
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: #F8F9FA;
+  padding: 1.25rem;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.stat-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
