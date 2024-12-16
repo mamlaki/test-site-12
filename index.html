@@ -161,6 +161,93 @@
       </form>
     </div>
   </dialog>
+  <!-- SCRIPT TESTING CODE FOR DEVELOPMENT ONLY -->
+  <section id="devTestPanel" class="dev-test-panel" style="display: none;">
+    <div class="tasks-section">
+      <div class="task-header">
+        <h3 class="task-title">DEV TESTING PANEL</h3>
+        <button class="btn-secondary" onclick="toggleDevPanel()">Hide Panel</button>
+      </div>
+      <div class="task-controls" style="margin: 1rem 0;">
+        <button class="btn-control" onclick="createSampleTask()">
+          <span class="icon">➕</span> Add Test Task
+        </button>
+        <button class="btn-control" onclick="toggleLastTaskTimer()">
+          <span class="icon">⏰</span> Toggle Timer
+        </button>
+        <button class="btn-control" onclick="toggleLastTaskComplete()">
+          <span class="icon">✅</span> Toggle Complete
+        </button>
+        <button class="btn-control" onclick="deleteLastTask()">
+          <span class="icon">🗑️</span> Delete Last Task
+        </button>
+      </div>
+    </div>
+    <div>
+      <h4>Raw Task Data:</h4>
+      <pre id="devTaskList" style="background: #F5F5F5; padding: 1rem; overflow: auto; max-height: 200px; font-size: 0.8rem;"></pre>
+    </div>
+  </section>
+  <script>
+    function toggleDevPanel() {
+      const panel = document.querySelector('#devTestPanel');
+      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function createSampleTask() {
+      // Check that taskManager exists
+      if (!window.taskManager) return;
+
+      const task = window.taskManager.addTask({
+        title: 'Test Task ' + new Date().toLocaleTimeString(),
+        description: 'This is a test task created at ' + new Date().toLocaleTimeString(),
+        category: 'test'
+      });
+
+      updateDevDisplay();
+    }
+
+    function toggleLastTaskTimer() {
+      // Check that taskManager exists
+      if (!window.taskManager || !window.taskManager.tasks.length) return;
+
+      const lastTask = window.taskManager.tasks[0];
+      window.taskManager.toggleTimer(lastTask.id);
+      updateDevDisplay();
+    }
+
+    function deleteLastTask() {
+      if (!window.taskManager || !window.taskManager.tasks.length) return;
+
+      const lastTask = window.taskManager.tasks[0];
+      window.taskManager.deleteTask(lastTask.id);
+      updateDevDisplay();
+    }
+
+    function toggleLastTaskComplete() {
+      if (!window.taskManager || !window.taskManager.tasks.length) return;
+
+      const lastTask = window.taskManager.tasks[0];
+      window.taskManager.toggleComplete(lastTask.id);
+      updateDevDisplay();
+    }
+
+    function updateDevDisplay() {
+      // Check that taskManager exists
+      if (!window.taskManager) return;
+      const taskListElement = document.querySelector('#devTaskList');
+      if (taskListElement) {
+        taskListElement.textContent = JSON.stringify(window.taskManager.tasks, null, 2);
+      }
+    }
+
+    // Dev Panel Toggle Hotkey
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === '`') {
+        toggleDevPanel();
+      }
+    });
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>
